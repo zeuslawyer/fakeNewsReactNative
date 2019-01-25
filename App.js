@@ -8,7 +8,6 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Check this out</Text>
-        <Text>Whoa</Text>
         <NewsCardList newsItems= {news}/>
       </View>
     );
@@ -31,7 +30,8 @@ const news = [
     title:"SAMPLE Title #1 Here",
     author: "Author Name",
     date: "date here",
-    body: "Loreum Ipsum something or the other goes here....etc etc etc"
+    body: "Loreum Ipsum something or the other goes here....etc etc etc",
+    key : "145"
   },
   {
     img:'insert',
@@ -39,26 +39,39 @@ const news = [
     author: "Author Name",
     date: "date here",
     body: "Loreum Ipsum something or the other goes here....etc etc etc"
+    ,
+    key : "1423"
   },
   {
     img:'insert',
     title:"Title 3 Here",
     author: "Author Name",
     date: "date here",
-    body: "Loreum Ipsum something or the other goes here....etc etc etc"
+    body: "Loreum Ipsum something or the other goes here....etc etc etc",
+    key : "14523"
   },
   {
     img:'insert',
     title:"Title 4 Here",
     author: "Author Name",
     date: "date here",
-    body: "Loreum Ipsum something or the other goes here....etc etc etc"
+    body: "Loreum Ipsum something or the other goes here....etc etc etc",
+    key : "1411135"
   },
   {
     img:'insert',
     title:"Title 5 Here",
     author: "Author Name",
     date: "date here",
-    body: "Loreum Ipsum something or the other goes here....etc etc etc"
+    body: "Loreum Ipsum something or the other goes here....etc etc etc",
+    key : "122145"
+  },
+  {
+    img:'insert',
+    title:"Title #6 Here",
+    author: "Author Name",
+    date: "date here",
+    body: "Loreum Ipsum something or the other goes here....etc etc etc",
+    key : "124235145"
   }
 ]

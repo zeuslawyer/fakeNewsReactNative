@@ -1,19 +1,23 @@
 import React, { Component } from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, FlatList } from "react-native";
 import NewsCardItem from "./NewsCardItem";
 
 class NewsCardList extends Component {
   renderListOfNews = newsItems => {
-    return newsItems.map(item => {
-      return <NewsCardItem title={item.title} />;
+    return newsItems.map((item, index) => {
+      return <NewsCardItem key={index} data={item} />;
     });
   };
 
   render() {
     return (
-      <View>
-        {/* <NewsCardItem title={this.props.newsItems[0].title}/> */}
-        {this.renderListOfNews(this.props.newsItems)}
+      <View styles={styles.container}>
+        <FlatList 
+            data={this.props.newsItems} 
+            renderItem={({item}) => <NewsCardItem key={item.key} data={item} />}
+        />
+          {/* <NewsCardItem title={this.props.newsItems[0].title} /> */}
+          {/* {this.renderListOfNews(this.props.newsItems)} */}
       </View>
     );
   }
@@ -21,4 +25,11 @@ class NewsCardList extends Component {
 
 export default NewsCardList;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
