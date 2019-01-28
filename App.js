@@ -14,7 +14,7 @@ export default class App extends React.Component {
     }`;
 
     axios.get(url).then(response => {
-      this.setState({ newsItems: response.data });
+      this.setState({ newsItems: response.data.articles });
     });
   };
 
@@ -31,7 +31,7 @@ export default class App extends React.Component {
           centerComponent={{ text: "MY TITLE", style: { color: "#fff" } }}
           backgroundColor="red"
         />
-        <NewsCardList newsItems={this.state.news} />
+        <NewsCardList newsItems={this.state.newsItems} />
       </View>
     );
   }

@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, Image } from "react-native";
+import { Card } from 'react-native-elements'
 
 class NewsCardItem extends Component {
   render() {
+    console.log(this.props);
     return (
-      <View style={styles.cardItem}>
-        <Text style={{ fontSize: 16, color: "white" }}>
-          Are you seeing something here: {this.props.data.title}
+      <Card>
+        <Text>
+          {this.props.item.title}
         </Text>
-      </View>
+      </Card>
     );
   }
 }
