@@ -4,8 +4,8 @@ import { Text, StyleSheet, View, Image } from "react-native";
 class NewsCardItem extends Component {
   render() {
     return (
-      <View>
-        <Text style={{ fontSize: 16 }}>
+      <View style={styles.cardItem}>
+        <Text style={{ fontSize: 16, color: "white" }}>
           Are you seeing something here: {this.props.data.title}
         </Text>
       </View>
@@ -15,4 +15,8 @@ class NewsCardItem extends Component {
 
 export default NewsCardItem;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    cardItem: {
+        borderColor: "red",
+    }
+});

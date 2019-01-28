@@ -7,11 +7,11 @@ class NewsCardList extends Component {
 
   render() {
     return (
-      <View styles={styles.container}>
+      <View style={styles.container}>
         <FlatList
           data={this.props.newsItems}
-          keyExtractor={this._keyExtractor}
-          renderItem={({ item }) => <NewsCardItem key={item.key} data={item} />}
+          // keyExtractor={this._keyExtractor}
+          renderItem={({ item }) => <NewsCardItem key={item.title} data={item} />}
         />
       </View>
     );
@@ -23,8 +23,8 @@ export default NewsCardList;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "green",
+    backgroundColor: "#000",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   }
 });
