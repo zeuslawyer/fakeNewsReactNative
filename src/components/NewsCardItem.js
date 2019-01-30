@@ -5,7 +5,8 @@ import {
   StyleSheet,
   Linking,
   View,
-  TouchableNativeFeedback
+  TouchableNativeFeedback,
+  TouchableHighlight
 } from "react-native";
 import { Card, Divider } from "react-native-elements";
 import moment from "moment";
@@ -22,7 +23,7 @@ export default (newsCardItem = props => {
   const timestamp = moment(publishedAt).fromNow();
 
   return (
-    <TouchableNativeFeedback onPress={() => onCardPress(url)}>
+    <TouchableHighlight onPress={() => onCardPress(url)}>
       <View style={styles.cardItemContainer}>
         <Card
           image={{ uri: urlToImage }}
@@ -41,7 +42,7 @@ export default (newsCardItem = props => {
           </View>
         </Card>
       </View>
-    </TouchableNativeFeedback>
+    </TouchableHighlight>
   );
 });
 

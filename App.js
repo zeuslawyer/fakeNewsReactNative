@@ -12,14 +12,16 @@ export default class App extends React.Component {
   };
 
   getNews = () => {
-    const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${
+    const URL = `https://newsapi.org/v2/everything?q=amazon&apiKey=${
       keys.NEWS_API
     }`;
+    const FIREBASE_FUNCTIONS_ENDPOINT =
+      "https://us-central1-myuniversalserver.cloudfunctions.net/zpuniversalserver/fakenews";
 
-    fetch(URL)
+    fetch(FIREBASE_FUNCTIONS_ENDPOINT)  //switch to URL to retrieve directly from newsAPI
       .then(response => response.json())
       .then(newsJson => {
-        console.log("*** Fetched News. Updating State. ***");
+        console.log("*** Fetched News. Updating State. ***\n");
         this.setState({
           newsItems: newsJson.articles,
           isRefreshing: false

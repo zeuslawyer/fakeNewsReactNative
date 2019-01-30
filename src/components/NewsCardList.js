@@ -15,8 +15,6 @@ class NewsCardList extends Component {
           keyExtractor={item => item.url}
           refreshing={this.props.refreshingBool}
           onRefresh={() => this.props.onRefreshHandler()}
-          // refreshing={this.state.refreshing}
-          // onRefresh={this.handleRefresh.bind(this)}
         />
       </View>
     );
